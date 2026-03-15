@@ -1,0 +1,19 @@
+/* General body */
+body { font-family: Arial; background:#ffe6f0; margin:0; padding:20px; text-align:center; }
+
+/* Buttons */
+button { padding:12px 20px; background:#c2185b; color:white; border:none; border-radius:5px; cursor:pointer; transition:0.3s; }
+button:hover { background:#880e4f; }
+
+/* Links */
+a { display:block; margin:10px 0; font-size:16px; color:#c2185b; text-decoration:none; }
+a:hover { text-decoration:underline; }
+
+/* Tips cards */
+.tips-container { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:20px; max-width:1000px; margin:auto; margin-top:30px; }
+.tip-card { background:white; border-radius:10px; overflow:hidden; box-shadow:0 0 10px gray; transition:transform 0.3s; }
+.tip-card:hover { transform:scale(1.05); }
+.tip-card img { width:100%; height:170px; object-fit:cover; }
+.tip-content { padding:15px; text-align:center; }
+.tip-content h3 { margin:0 0 10px 0; color:#c2185b; }
+.tip-content p { margin:0; }
