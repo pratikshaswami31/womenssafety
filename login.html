@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Login - Women Safety</title>
+<link rel="stylesheet" href="/static/style.css">
+
+<style>
+
+body{
+font-family:Arial;
+background:#ffe6f0;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+}
+
+.login-box{
+background:white;
+padding:30px;
+width:350px;
+border-radius:10px;
+box-shadow:0 0 10px gray;
+}
+
+h2{
+text-align:center;
+color:#c2185b;
+}
+
+input{
+width:100%;
+padding:10px;
+margin:8px 0;
+border-radius:5px;
+border:1px solid #ccc;
+}
+
+button{
+width:100%;
+padding:12px;
+background:#c2185b;
+color:white;
+border:none;
+font-size:16px;
+border-radius:5px;
+cursor:pointer;
+}
+
+button:hover{
+background:#880e4f;
+}
+
+.links{
+display:flex;
+justify-content:space-between;
+font-size:14px;
+}
+
+.social{
+margin-top:15px;
+text-align:center;
+}
+
+.social button{
+margin:5px;
+background:#eee;
+color:black;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="login-box">
+
+<h2>User Login</h2>
+
+<form method="POST">
+
+<label>Email or Phone</label>
+<input type="text" name="email" placeholder="Enter email or phone" required>
+
+<label>Password</label>
+
+<div style="display:flex">
+
+<input type="password" id="password" name="password" placeholder="Enter password" required>
+
+<button type="button" onclick="togglePassword()">👁</button>
+
+</div>
+
+<label>
+<input type="checkbox"> Remember me
+</label>
+
+<br><br>
+
+<button type="submit">Login</button>
+
+</form>
+
+<div class="links">
+
+<a href="#">Forgot Password?</a>
+
+<a href="/register">Create Account</a>
+
+</div>
+
+<div class="social">
+
+<p>Or Login With</p>
+
+<button>Google</button>
+<button>Facebook</button>
+
+</div>
+
+<br>
+
+<button onclick="sendOTP()">Login with OTP</button>
+
+</div>
+
+<script>
+
+function togglePassword(){
+
+let pass=document.getElementById("password");
+
+if(pass.type==="password"){
+pass.type="text";
+}else{
+pass.type="password";
+}
+
+}
+
+function sendOTP(){
+
+alert("OTP sent to your phone");
+
+}
+
+</script>
+
+</body>
+</html>

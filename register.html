@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>User Registration</title>
+
+<link rel="stylesheet" href="/static/style.css">
+
+<style>
+
+body{
+font-family:Arial;
+background:#ffe6f0;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+}
+
+.form-container{
+background:white;
+padding:30px;
+border-radius:10px;
+width:400px;
+box-shadow:0 0 10px gray;
+}
+
+h2{
+text-align:center;
+color:#c2185b;
+}
+
+input,select{
+width:100%;
+padding:10px;
+margin:8px 0;
+border-radius:5px;
+border:1px solid #ccc;
+}
+
+button{
+width:100%;
+padding:12px;
+background:#c2185b;
+color:white;
+border:none;
+font-size:16px;
+border-radius:5px;
+cursor:pointer;
+}
+
+button:hover{
+background:#880e4f;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="form-container">
+
+<h2>Register</h2>
+
+<form method="POST" enctype="multipart/form-data">
+
+<label>Full Name</label>
+<input type="text" name="name" placeholder="Enter full name" required>
+
+<label>Email</label>
+<input type="email" name="email" placeholder="Enter email" required>
+
+<label>Phone Number</label>
+<input type="tel" name="phone" placeholder="Enter phone number" required>
+
+<label>Emergency Contact</label>
+<input type="tel" name="emergency" placeholder="Emergency contact number">
+
+<label>Password</label>
+<input type="password" id="password" name="password" required>
+
+<label>Confirm Password</label>
+<input type="password" id="confirm" name="confirm_password" required>
+
+
+<label>Select City</label>
+
+<select name="city">
+
+<option>Pune</option>
+<option>Mumbai</option>
+<option>Delhi</option>
+<option>Bangalore</option>
+
+</select>
+
+<button type="submit">Create Account</button>
+
+</form>
+
+<br>
+
+<p style="text-align:center">
+Already have account?
+<a href="/login">Login</a>
+</p>
+
+</div>
+
+<script>
+
+let password=document.getElementById("password");
+let confirm=document.getElementById("confirm");
+
+confirm.onkeyup=function(){
+
+if(password.value!=confirm.value){
+
+confirm.style.border="2px solid red";
+
+}else{
+
+confirm.style.border="2px solid green";
+
+}
+
+}
+
+</script>
+
+</body>
+</html>

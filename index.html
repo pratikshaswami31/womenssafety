@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<title>Women Safety Web App</title>
+<link rel="stylesheet" href="/static/style.css">
+
+<style>
+
+body{
+margin:0;
+font-family:Arial;
+background:#ffe6f0;
+}
+
+header{
+background:#c2185b;
+color:white;
+padding:15px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+margin:10px;
+font-weight:bold;
+}
+
+.hero{
+text-align:center;
+padding:60px;
+background:linear-gradient(#ff80ab,#f06292);
+color:white;
+}
+
+.hero h1{
+font-size:40px;
+}
+
+.hero p{
+font-size:18px;
+}
+
+.sos-btn{
+background:red;
+color:white;
+border:none;
+padding:20px;
+font-size:20px;
+border-radius:10px;
+cursor:pointer;
+margin-top:20px;
+}
+
+.features{
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+margin:40px;
+}
+
+.card{
+background:white;
+width:250px;
+margin:15px;
+padding:20px;
+border-radius:10px;
+box-shadow:0 0 10px gray;
+text-align:center;
+}
+
+.card h3{
+color:#c2185b;
+}
+
+.tips{
+background:white;
+margin:40px;
+padding:30px;
+border-radius:10px;
+}
+
+footer{
+background:#c2185b;
+color:white;
+text-align:center;
+padding:15px;
+margin-top:40px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<h2>Women Safety</h2>
+
+<nav>
+
+<a href="/">Home</a>
+<a href="/register">Register</a>
+<a href="/login">Login</a>
+<a href="/tips">Safety Tips</a>
+
+</nav>
+
+</header>
+
+<section class="hero">
+
+<h1>Women Safety Web Application</h1>
+
+<p>Your safety is our priority. Get help instantly with SOS alert.</p>
+
+<button class="sos-btn" onclick="alert('SOS Alert Triggered!')">
+🚨 SEND SOS
+</button>
+
+</section>
+
+<section class="features">
+
+<div class="card">
+<h3>📍 Live Location</h3>
+<p>Share your real-time location with trusted contacts.</p>
+</div>
+
+<div class="card">
+<h3>📞 Emergency Contacts</h3>
+<p>Quickly contact family or friends during emergency.</p>
+</div>
+
+<div class="card">
+<h3>📝 Report Incident</h3>
+<p>Report harassment or unsafe situations instantly.</p>
+</div>
+
+<div class="card">
+<h3>🗺 Nearby Police</h3>
+<p>Find the nearest police stations on the map.</p>
+</div>
+
+</section>
+
+<section class="tips">
+
+<h2>Quick Safety Tips</h2>
+
+<ul>
+
+<li>Always share your location with trusted people.</li>
+
+<li>Avoid isolated places at night.</li>
+
+<li>Keep emergency numbers saved.</li>
+
+<li>Trust your instincts and stay alert.</li>
+
+</ul>
+
+</section>
+
+<footer>
+
+<p>Women Safety Web App | Stay Safe</p>
+
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Creative Women Safety Tips</title>
+    <style>
+        body { font-family: Arial; background: #fff0f5; margin: 0; padding: 20px; }
+        h1 { text-align: center; color: #d81b60; margin-bottom: 30px; }
+
+        .tips-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .tip-card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px gray;
+            overflow: hidden;
+            transition: 0.3s;
+        }
+
+        .tip-card:hover { transform: scale(1.05); }
+
+        .tip-card img { width: 100%; height: 180px; object-fit: cover; }
+
+        .tip-content { padding: 15px; }
+
+        .slider {
+            max-width: 800px;
+            margin: 40px auto;
+            text-align: center;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px gray;
+        }
+
+        button {
+            padding: 10px 20px;
+            background: #d81b60;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Creative Women Safety Tips</h1>
+
+<div class="tips-container">
+
+    <div class="tip-card">
+        <img src="{{ url_for('static', filename='uploads/digital_safety.jpg') }}" alt="Digital Safety">
+        <div class="tip-content">
+            <h3>💻 Digital Safety</h3>
+            <p>Secure your social media and avoid sharing personal info publicly.</p>
+        </div>
+    </div>
+
+    <div class="tip-card">
+        <img src="{{ url_for('static', filename='uploads/smart_wearable.jpg') }}" alt="Smart Wearables">
+        <div class="tip-content">
+            <h3>⌚ Smart Wearables</h3>
+            <p>Use smart jewelry or apps that can alert contacts during emergencies.</p>
+        </div>
+    </div>
+
+    <div class="tip-card">
+        <img src="{{ url_for('static', filename='uploads/community.jpg') }}" alt="Community Awareness">
+        <div class="tip-content">
+            <h3>🏘️ Community Awareness</h3>
+            <p>Learn about safe areas, police stations, and help centers near you.</p>
+        </div>
+    </div>
+
+    <div class="tip-card">
+        <img src="{{ url_for('static', filename='uploads/escape.jpg') }}" alt="Escape Planning">
+        <div class="tip-content">
+            <h3>🚪 Escape Planning</h3>
+            <p>Always identify exits and safe spots in public spaces.</p>
+        </div>
+    </div>
+
+    <div class="tip-card">
+        <img src="{{ url_for('static', filename='uploads/voice_alert.jpg') }}" alt="Voice Alerts">
+        <div class="tip-content">
+            <h3>🔊 Voice Alerts</h3>
+            <p>Use whistles, alarms, or voice apps to attract attention quickly.</p>
+        </div>
+    </div>
+
+    <div class="tip-card">
+        <img src="{{ url_for('static', filename='uploads/mental_safety.jpg') }}" alt="Mental Safety">
+        <div class="tip-content">
+            <h3>🧘 Mental Safety</h3>
+            <p>Trust your instincts and avoid situations that feel unsafe.</p>
+        </div>
+    </div>
+
+</div>
+
+<!-- Quick Tips Slider -->
+<div class="slider">
+    <h2>Quick Safety Advice</h2>
+    <p id="tipText">Always secure your online accounts.</p>
+    <button onclick="nextTip()">Next Tip</button>
+</div>
+
+<script>
+let tips = [
+    "Always secure your online accounts.",
+    "Carry a smart wearable or safety app.",
+    "Know safe spots and police stations near you.",
+    "Identify exits before entering public places.",
+    "Use loud alarms or voice alerts if threatened.",
+    "Trust your instincts and leave unsafe situations.",
+    "Inform someone you trust about your plans."
+];
+
+let index = 0;
+function nextTip(){
+    index = (index + 1) % tips.length;
+    document.getElementById("tipText").innerText = tips[index];
+}
+</script>
+
+</body>
+</html>

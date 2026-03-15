@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Report Incident</title>
+<link rel="stylesheet" href="/static/style.css">
+
+<style>
+
+body{
+font-family:Arial;
+background:#ffe6f0;
+display:flex;
+justify-content:center;
+align-items:center;
+min-height:100vh;
+}
+
+.container{
+background:white;
+padding:30px;
+width:450px;
+border-radius:10px;
+box-shadow:0 0 10px gray;
+}
+
+h2{
+text-align:center;
+color:#c2185b;
+}
+
+input,textarea,select{
+width:100%;
+padding:10px;
+margin:8px 0;
+border-radius:5px;
+border:1px solid #ccc;
+}
+
+textarea{
+height:100px;
+}
+
+button{
+width:100%;
+padding:12px;
+background:#c2185b;
+color:white;
+border:none;
+font-size:16px;
+border-radius:5px;
+cursor:pointer;
+}
+
+button:hover{
+background:#880e4f;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>Report Incident</h2>
+
+<form method="POST" enctype="multipart/form-data">
+
+<label>Your Name</label>
+<input type="text" name="name" placeholder="Enter your name" required>
+
+<label>Email</label>
+<input type="email" name="email" placeholder="Enter email">
+
+<label>Incident Type</label>
+
+<select name="type">
+<option>Harassment</option>
+<option>Stalking</option>
+<option>Unsafe Area</option>
+<option>Domestic Violence</option>
+<option>Other</option>
+</select>
+
+<label>Severity Level</label>
+
+<select name="severity">
+<option>Low</option>
+<option>Medium</option>
+<option>High</option>
+<option>Emergency</option>
+</select>
+
+<label>Incident Location</label>
+<input type="text" id="location" name="location" placeholder="Click detect location">
+
+<button type="button" onclick="getLocation()">Detect GPS Location</button>
+
+<label>Description</label>
+<textarea name="description" placeholder="Describe the incident"></textarea>
+
+<label>Upload Evidence (Photo / Video)</label>
+<input type="file" name="evidence">
+
+<label>Date & Time</label>
+<input type="datetime-local" name="time">
+
+<br><br>
+
+<button type="submit">Submit Report</button>
+
+</form>
+
+</div>
+
+<script>
+
+function getLocation(){
+
+if(navigator.geolocation){
+
+navigator.geolocation.getCurrentPosition(function(position){
+
+document.getElementById("location").value =
+position.coords.latitude + "," + position.coords.longitude;
+
+});
+
+}else{
+
+alert("Geolocation not supported");
+
+}
+
+}
+
+</script>
+
+</body>
+</html>

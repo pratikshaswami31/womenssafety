@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>SOS Emergency</title>
+<link rel="stylesheet" href="/static/style.css">
+
+<style>
+
+body{
+font-family:Arial;
+background:#ffe6f0;
+text-align:center;
+padding:40px;
+}
+
+h1{
+color:#c2185b;
+}
+
+.sos-button{
+width:200px;
+height:200px;
+border-radius:50%;
+background:red;
+color:white;
+font-size:30px;
+border:none;
+cursor:pointer;
+animation:pulse 2s infinite;
+}
+
+@keyframes pulse{
+
+0%{transform:scale(1);}
+50%{transform:scale(1.1);}
+100%{transform:scale(1);}
+
+}
+
+.info{
+background:white;
+padding:20px;
+margin:30px auto;
+width:400px;
+border-radius:10px;
+box-shadow:0 0 10px gray;
+}
+
+button.small{
+margin:10px;
+padding:10px;
+border:none;
+background:#c2185b;
+color:white;
+border-radius:5px;
+cursor:pointer;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>🚨 SOS Emergency</h1>
+
+<p>Press the button in case of danger</p>
+
+<button class="sos-button" onclick="activateSOS()">SOS</button>
+
+<div class="info">
+
+<h3>Your Location</h3>
+
+<p id="location">Location not detected</p>
+
+<button class="small" onclick="getLocation()">Detect Location</button>
+
+</div>
+
+<div class="info">
+
+<h3>Emergency Contacts</h3>
+
+<button class="small" onclick="callPolice()">📞 Call Police</button>
+
+<button class="small" onclick="callHelpline()">📞 Women Helpline</button>
+
+<button class="small" onclick="sendMessage()">📨 Send Emergency Message</button>
+
+</div>
+
+<audio id="alarm" src="https://www.soundjay.com/misc/sounds/bell-ringing-05.mp3"></audio>
+
+<script>
+
+function activateSOS(){
+
+alert("SOS ALERT ACTIVATED!");
+
+document.getElementById("alarm").play();
+
+getLocation();
+
+sendMessage();
+
+}
+
+function getLocation(){
+
+if(navigator.geolocation){
+
+navigator.geolocation.getCurrentPosition(function(position){
+
+let lat=position.coords.latitude;
+let lon=position.coords.longitude;
+
+document.getElementById("location").innerHTML=
+"Latitude: "+lat+"<br>Longitude: "+lon;
+
+});
+
+}else{
+
+alert("Geolocation not supported");
+
+}
+
+}
+
+function callPolice(){
+
+window.location.href="tel:100";
+
+}
+
+function callHelpline(){
+
+window.location.href="tel:1091";
+
+}
+
+function sendMessage(){
+
+alert("Emergency message sent to contacts!");
+
+}
+
+</script>
+
+</body>
+</html>
